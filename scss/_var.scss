@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+$fontGrotesk: "Space Grotesk", sans-serif;
+$fw500: 500;
+$fs18: 18px;
+
+//primary
+
+//(active input border)
+$primaryActive: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+
+//(input errors)
+$primaryError: hsl(0, 100%, 66%);
+
+//neutral
+$white: hsl(0, 0%, 100%);
+$neutral200: hsl(270, 3%, 87%);
+$neutral300: hsl(279, 6%, 55%);
+$neutral400: hsl(278, 68%, 11%);
