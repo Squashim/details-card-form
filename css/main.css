@@ -1,1 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: hsl(0deg, 0%, 100%);
+  font-size: 18px;
+}
+
+header {
+  background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 15rem;
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+  padding: 1rem;
+}
+header .card-back-img {
+  max-width: 80%;
+  height: auto;
+  right: 1rem;
+  top: 1.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+}
+header .card-front-img {
+  max-width: 80%;
+  left: 1rem;
+  bottom: -2.5rem;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+}
+header .card-front__details,
+header .card-back__details {
+  display: none;
+}
+
+main,
+footer {
+  display: none;
+}/*# sourceMappingURL=main.css.map */
