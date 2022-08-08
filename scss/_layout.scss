@@ -10,8 +10,9 @@ header {
 	.cards {
 		width: 100%;
 		height: 100%;
-		display: grid;
-		grid-template-columns: 1fr;
+		position: relative;
+		max-width: 400px;
+		margin: 0 auto;
 
 		.card-back {
 			width: 18.5rem;
@@ -20,11 +21,15 @@ header {
 			background-image: url("../images/bg-card-back.png");
 			background-repeat: no-repeat;
 			background-size: contain;
-			position: relative;
+			position: absolute;
+			z-index: 1;
+			right: 0;
+			top: 1rem;
 			.card-back-details {
 				position: absolute;
-				top: 4.5rem;
 				right: 2.5rem;
+				top: 4.5rem;
+				z-index: 2;
 				p {
 					color: $white;
 					font-size: 0.7rem;
@@ -40,15 +45,40 @@ header {
 			background-image: url("../images/bg-card-front.png");
 			background-repeat: no-repeat;
 			background-size: contain;
-			position: relative;
+			position: absolute;
+			left: 0;
+			bottom: -7rem;
+			z-index: 3;
 			.card-front-details {
+				width: 296px;
+				height: 162px;
 				position: absolute;
-				top: 4.5rem;
-				right: 2.5rem;
-				p {
-					color: $white;
-					font-size: 0.7rem;
+				padding: 1rem;
+				z-index: 4;
+				display: flex;
+				flex-direction: column;
+				.logo {
+					max-width: 3.5rem;
+				}
+				.card-number {
 					letter-spacing: 1px;
+					color: $white;
+					font-weight: $fw500;
+					font-size: 1.3rem;
+					margin-top: 2.5rem;
+				}
+				.row {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					margin: auto 0 0 0;
+					.card-name,
+					.exp-date {
+						font-weight: $fw500;
+						text-transform: uppercase;
+						font-size: small;
+						color: $white;
+					}
 				}
 			}
 		}

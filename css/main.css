@@ -28,8 +28,9 @@ header {
 header .cards {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
 }
 header .cards .card-back {
   width: 18.5rem;
@@ -38,12 +39,16 @@ header .cards .card-back {
   background-image: url("../images/bg-card-back.png");
   background-repeat: no-repeat;
   background-size: contain;
-  position: relative;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 1rem;
 }
 header .cards .card-back .card-back-details {
   position: absolute;
-  top: 4.5rem;
   right: 2.5rem;
+  top: 4.5rem;
+  z-index: 2;
 }
 header .cards .card-back .card-back-details p {
   color: hsl(0deg, 0%, 100%);
@@ -57,17 +62,42 @@ header .cards .card-front {
   background-image: url("../images/bg-card-front.png");
   background-repeat: no-repeat;
   background-size: contain;
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: -7rem;
+  z-index: 3;
 }
 header .cards .card-front .card-front-details {
+  width: 296px;
+  height: 162px;
   position: absolute;
-  top: 4.5rem;
-  right: 2.5rem;
+  padding: 1rem;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
 }
-header .cards .card-front .card-front-details p {
-  color: hsl(0deg, 0%, 100%);
-  font-size: 0.7rem;
+header .cards .card-front .card-front-details .logo {
+  max-width: 3.5rem;
+}
+header .cards .card-front .card-front-details .card-number {
   letter-spacing: 1px;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+}
+header .cards .card-front .card-front-details .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto 0 0 0;
+}
+header .cards .card-front .card-front-details .row .card-name,
+header .cards .card-front .card-front-details .row .exp-date {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: small;
+  color: hsl(0deg, 0%, 100%);
 }
 
 main {
