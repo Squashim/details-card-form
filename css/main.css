@@ -109,10 +109,16 @@ main form {
 }
 main form label {
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: hsl(278deg, 68%, 11%);
   letter-spacing: 1px;
   display: block;
+  font-weight: 500;
+}
+main form input {
+  font-size: 1.5rem;
+  outline: none;
+  border: 1px solid hsl(279deg, 6%, 55%);
 }
 
 footer {

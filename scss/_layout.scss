@@ -92,10 +92,16 @@ main {
 		//place for errors styling
 		label {
 			text-transform: uppercase;
-			font-size: 0.85rem;
+			font-size: 0.9rem;
 			color: $neutral400;
 			letter-spacing: 1px;
 			display: block;
+			font-weight: $fw500;
+		}
+		input {
+			font-size: 1.5rem;
+			outline: none;
+			border: 1px solid $neutral300;
 		}
 	}
 }
