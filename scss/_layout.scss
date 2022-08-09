@@ -88,20 +88,67 @@ main {
 	background-color: $white;
 	form {
 		padding: 1.2rem;
-		margin-top: 4rem;
+		max-width: 400px;
+		margin: 4rem auto;
 		//place for errors styling
 		label {
 			text-transform: uppercase;
 			font-size: 0.9rem;
 			color: $neutral400;
 			letter-spacing: 1px;
-			display: block;
 			font-weight: $fw500;
+			margin: 1.2rem 0 0.5rem 0;
+			display: block;
 		}
 		input {
-			font-size: 1.5rem;
+			font-size: $fs18;
 			outline: none;
-			border: 1px solid $neutral300;
+			border: 1px solid $neutral200;
+			border-radius: 0.5rem;
+			padding: 0.5rem 1rem;
+			width: 100%;
+			font-family: $fontGrotesk;
+			display: block;
+			&::placeholder {
+				color: $neutral200;
+			}
+		}
+		.container {
+			display: flex;
+			flex-direction: row;
+			gap: 1rem;
+			.row {
+				display: flex;
+				gap: 0.5rem;
+				flex-direction: row;
+			}
+			.column {
+				display: flex;
+				flex-direction: column;
+				.input-month,
+				.input-year {
+					width: 77px;
+					max-width: 100%;
+				}
+			}
+		}
+		.submitBtn {
+			width: 100%;
+			outline: none;
+			border: 1px solid $neutral400;
+			border-radius: 0.5rem;
+			font-size: inherit;
+			color: $neutral200;
+			font-family: $fontGrotesk;
+			font-weight: $fw500;
+			background-color: $neutral400;
+			padding: 0.9rem;
+			margin-top: 2rem;
+			cursor: pointer;
+			&:hover {
+				color: $neutral400;
+				background-color: $white;
+			}
 		}
 	}
 }

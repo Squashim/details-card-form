@@ -55,13 +55,31 @@
 					placeholder="e.g. 1234 5678 9123 0000"
 				/>
 
-				<label for="month">exp. date (mm/yy)</label>
-				<input type="number" id="month" placeholder="MM" />
-				<input type="number" id="year" placeholder="YY" />
-				<label for="cvc">cvc</label>
-				<input type="number" id="cvc" placeholder="e.g. 123" />
+				<div class="container">
+					<div class="column">
+						<label for="month" class="label-date">exp. date (mm/yy)</label>
+						<div class="row">
+							<input
+								type="number"
+								class="input-month"
+								id="month"
+								placeholder="MM"
+							/>
+							<input
+								type="number"
+								class="input-year"
+								id="year"
+								placeholder="YY"
+							/>
+						</div>
+					</div>
+					<div class="column">
+						<label for="cvc" class="label-cvc">cvc</label>
+						<input type="number" id="cvc" placeholder="e.g. 123" />
+					</div>
+				</div>
 
-				<button type="submit">confirm</button>
+				<button class="submitBtn" type="submit">Confirm</button>
 			</form>
 		</main>
 		<footer class="attribution">

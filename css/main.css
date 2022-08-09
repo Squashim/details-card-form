@@ -105,20 +105,73 @@ main {
 }
 main form {
   padding: 1.2rem;
-  margin-top: 4rem;
+  max-width: 400px;
+  margin: 4rem auto;
 }
 main form label {
   text-transform: uppercase;
   font-size: 0.9rem;
   color: hsl(278deg, 68%, 11%);
   letter-spacing: 1px;
-  display: block;
   font-weight: 500;
+  margin: 1.2rem 0 0.5rem 0;
+  display: block;
 }
 main form input {
-  font-size: 1.5rem;
+  font-size: 18px;
   outline: none;
-  border: 1px solid hsl(279deg, 6%, 55%);
+  border: 1px solid hsl(270deg, 3%, 87%);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-family: "Space Grotesk", sans-serif;
+  display: block;
+}
+main form input::-moz-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+main form input:-ms-input-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+main form input::placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+main form .container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+main form .container .row {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+}
+main form .container .column {
+  display: flex;
+  flex-direction: column;
+}
+main form .container .column .input-month,
+main form .container .column .input-year {
+  width: 77px;
+  max-width: 100%;
+}
+main form .submitBtn {
+  width: 100%;
+  outline: none;
+  border: 1px solid hsl(278deg, 68%, 11%);
+  border-radius: 0.5rem;
+  font-size: inherit;
+  color: hsl(270deg, 3%, 87%);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  background-color: hsl(278deg, 68%, 11%);
+  padding: 0.9rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+main form .submitBtn:hover {
+  color: hsl(278deg, 68%, 11%);
+  background-color: hsl(0deg, 0%, 100%);
 }
 
 footer {
