@@ -18,7 +18,7 @@ body {
   grid-template-columns: 1fr;
   align-items: center;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   body {
     grid-template-columns: 1fr 2fr;
   }
@@ -34,7 +34,7 @@ header {
   max-width: 100%;
   padding: 1rem;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header {
     background-image: url("../images/bg-main-desktop.png");
     height: 100vh;
@@ -49,7 +49,7 @@ header .cards {
   max-width: 400px;
   margin: 0 auto;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards {
     max-width: 100%;
   }
@@ -66,7 +66,7 @@ header .cards .card-back {
   right: 0;
   top: 1rem;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards .card-back {
     width: 25rem;
     right: -12.5rem;
@@ -82,7 +82,7 @@ header .cards .card-back .card-back-details {
   top: 4.5rem;
   z-index: 2;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards .card-back .card-back-details {
     top: 6rem;
     right: 3rem;
@@ -93,7 +93,7 @@ header .cards .card-back .card-back-details p {
   font-size: 0.7rem;
   letter-spacing: 1px;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards .card-back .card-back-details p {
     font-size: 1rem;
   }
@@ -110,7 +110,7 @@ header .cards .card-front {
   bottom: -7rem;
   z-index: 3;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards .card-front {
     width: 25rem;
     left: 12rem;
@@ -129,7 +129,7 @@ header .cards .card-front .card-front-details {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards .card-front .card-front-details {
     width: 25rem;
     height: 220px;
@@ -139,7 +139,7 @@ header .cards .card-front .card-front-details {
 header .cards .card-front .card-front-details .logo {
   max-width: 3.5rem;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards .card-front .card-front-details .logo {
     max-width: 5rem;
   }
@@ -151,7 +151,7 @@ header .cards .card-front .card-front-details .card-number {
   font-size: 1.3rem;
   margin-top: 2.5rem;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards .card-front .card-front-details .card-number {
     font-size: 1.87rem;
     margin-top: 2.8rem;
@@ -170,7 +170,7 @@ header .cards .card-front .card-front-details .row .exp-date {
   font-size: 0.7rem;
   color: hsl(270deg, 3%, 87%);
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   header .cards .card-front .card-front-details .row .card-name,
 header .cards .card-front .card-front-details .row .exp-date {
     font-size: 0.9rem;
@@ -185,7 +185,7 @@ main form {
   max-width: 400px;
   margin: 4rem auto;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   main form {
     display: flex;
     flex-direction: column;
@@ -278,7 +278,7 @@ footer {
   font-size: 14px;
   text-align: center;
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   footer {
     grid-column: span 2;
     background: hsl(278deg, 68%, 11%);
@@ -288,7 +288,7 @@ footer {
 footer a {
   color: hsl(278deg, 68%, 11%);
 }
-@media (min-width: 75em) {
+@media (min-width: 78.125em) {
   footer a {
     color: hsl(0deg, 0%, 100%);
   }
