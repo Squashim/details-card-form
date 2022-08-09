@@ -1,4 +1,5 @@
 @import "var";
+@import "media";
 
 *,
 *::after,
@@ -12,4 +13,10 @@ body {
 	font-family: $fontGrotesk;
 	background-color: $white;
 	font-size: $fs18;
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	@include desktop {
+		grid-template-columns: 1fr 2fr;
+	}
 }

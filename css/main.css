@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 *,
 *::after,
 *::before {
@@ -13,6 +14,14 @@ body {
   font-family: "Space Grotesk", sans-serif;
   background-color: hsl(0deg, 0%, 100%);
   font-size: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 75em) {
+  body {
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 header {
@@ -25,12 +34,25 @@ header {
   max-width: 100%;
   padding: 1rem;
 }
+@media (min-width: 75em) {
+  header {
+    background-image: url("../images/bg-main-desktop.png");
+    height: 100vh;
+    padding: 0;
+  }
+}
 header .cards {
+  pointer-events: none;
   width: 100%;
   height: 100%;
   position: relative;
   max-width: 400px;
   margin: 0 auto;
+}
+@media (min-width: 75em) {
+  header .cards {
+    max-width: 100%;
+  }
 }
 header .cards .card-back {
   width: 18.5rem;
@@ -44,16 +66,37 @@ header .cards .card-back {
   right: 0;
   top: 1rem;
 }
+@media (min-width: 75em) {
+  header .cards .card-back {
+    width: 25rem;
+    right: -12.5rem;
+    top: 27rem;
+    box-shadow: 0.2rem 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    height: 219px;
+    border-radius: 0.5rem;
+  }
+}
 header .cards .card-back .card-back-details {
   position: absolute;
   right: 2.5rem;
   top: 4.5rem;
   z-index: 2;
 }
+@media (min-width: 75em) {
+  header .cards .card-back .card-back-details {
+    top: 6rem;
+    right: 3rem;
+  }
+}
 header .cards .card-back .card-back-details p {
   color: hsl(0deg, 0%, 100%);
   font-size: 0.7rem;
   letter-spacing: 1px;
+}
+@media (min-width: 75em) {
+  header .cards .card-back .card-back-details p {
+    font-size: 1rem;
+  }
 }
 header .cards .card-front {
   width: 18.5rem;
@@ -67,6 +110,16 @@ header .cards .card-front {
   bottom: -7rem;
   z-index: 3;
 }
+@media (min-width: 75em) {
+  header .cards .card-front {
+    width: 25rem;
+    left: 12rem;
+    top: 11rem;
+    box-shadow: 0.2rem 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    height: 220px;
+    border-radius: 0.5rem;
+  }
+}
 header .cards .card-front .card-front-details {
   width: 296px;
   height: 162px;
@@ -76,8 +129,20 @@ header .cards .card-front .card-front-details {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 75em) {
+  header .cards .card-front .card-front-details {
+    width: 25rem;
+    height: 220px;
+    padding: 1.5rem;
+  }
+}
 header .cards .card-front .card-front-details .logo {
   max-width: 3.5rem;
+}
+@media (min-width: 75em) {
+  header .cards .card-front .card-front-details .logo {
+    max-width: 5rem;
+  }
 }
 header .cards .card-front .card-front-details .card-number {
   letter-spacing: 1px;
@@ -85,6 +150,12 @@ header .cards .card-front .card-front-details .card-number {
   font-weight: 500;
   font-size: 1.3rem;
   margin-top: 2.5rem;
+}
+@media (min-width: 75em) {
+  header .cards .card-front .card-front-details .card-number {
+    font-size: 1.87rem;
+    margin-top: 2.8rem;
+  }
 }
 header .cards .card-front .card-front-details .row {
   display: flex;
@@ -99,6 +170,12 @@ header .cards .card-front .card-front-details .row .exp-date {
   font-size: 0.7rem;
   color: hsl(270deg, 3%, 87%);
 }
+@media (min-width: 75em) {
+  header .cards .card-front .card-front-details .row .card-name,
+header .cards .card-front .card-front-details .row .exp-date {
+    font-size: 0.9rem;
+  }
+}
 
 main {
   background-color: hsl(0deg, 0%, 100%);
@@ -108,13 +185,21 @@ main form {
   max-width: 400px;
   margin: 4rem auto;
 }
+@media (min-width: 75em) {
+  main form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 4rem 14rem 4rem auto;
+  }
+}
 main form label {
   text-transform: uppercase;
   font-size: 0.9rem;
   color: hsl(278deg, 68%, 11%);
   letter-spacing: 1px;
   font-weight: 500;
-  margin: 1.2rem 0 0.5rem 0;
+  margin: 0.8rem 0 0.5rem 0;
   display: block;
 }
 main form input {
@@ -126,6 +211,7 @@ main form input {
   width: 100%;
   font-family: "Space Grotesk", sans-serif;
   display: block;
+  color: hsl(278deg, 68%, 11%);
 }
 main form input::-moz-placeholder {
   color: hsl(270deg, 3%, 87%);
@@ -135,6 +221,13 @@ main form input:-ms-input-placeholder {
 }
 main form input::placeholder {
   color: hsl(270deg, 3%, 87%);
+}
+main form input:focus {
+  background: linear-gradient(hsl(0deg, 0%, 100%), hsl(0deg, 0%, 100%)) padding-box, linear-gradient(hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%)) border-box;
+  border: 1px solid transparent;
+}
+main form input.error {
+  border-color: hsl(0deg, 100%, 66%);
 }
 main form .container {
   display: flex;
@@ -166,14 +259,37 @@ main form .submitBtn {
   font-weight: 500;
   background-color: hsl(278deg, 68%, 11%);
   padding: 0.9rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   cursor: pointer;
 }
 main form .submitBtn:hover {
   color: hsl(278deg, 68%, 11%);
   background-color: hsl(0deg, 0%, 100%);
 }
+main form .error-text {
+  color: hsl(0deg, 100%, 66%);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  height: 16px;
+}
 
 footer {
-  display: none;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+}
+@media (min-width: 75em) {
+  footer {
+    grid-column: span 2;
+    background: hsl(278deg, 68%, 11%);
+    color: hsl(270deg, 3%, 87%);
+  }
+}
+footer a {
+  color: hsl(278deg, 68%, 11%);
+}
+@media (min-width: 75em) {
+  footer a {
+    color: hsl(0deg, 0%, 100%);
+  }
 }/*# sourceMappingURL=main.css.map */

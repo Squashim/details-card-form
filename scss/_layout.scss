@@ -1,3 +1,6 @@
+@import "var";
+@import "media";
+
 header {
 	background-image: url("../images/bg-main-mobile.png");
 	background-repeat: no-repeat;
@@ -7,12 +10,21 @@ header {
 	max-height: 100%;
 	max-width: 100%;
 	padding: 1rem;
+	@include desktop {
+		background-image: url("../images/bg-main-desktop.png");
+		height: 100vh;
+		padding: 0;
+	}
 	.cards {
+		pointer-events: none;
 		width: 100%;
 		height: 100%;
 		position: relative;
 		max-width: 400px;
 		margin: 0 auto;
+		@include desktop {
+			max-width: 100%;
+		}
 
 		.card-back {
 			width: 18.5rem;
@@ -25,15 +37,30 @@ header {
 			z-index: 1;
 			right: 0;
 			top: 1rem;
+			@include desktop {
+				width: 25rem;
+				right: -12.5rem;
+				top: 27rem;
+				box-shadow: 0.2rem 0.5rem 1.5rem rgba(black, 0.2);
+				height: 219px;
+				border-radius: 0.5rem;
+			}
 			.card-back-details {
 				position: absolute;
 				right: 2.5rem;
 				top: 4.5rem;
 				z-index: 2;
+				@include desktop {
+					top: 6rem;
+					right: 3rem;
+				}
 				p {
 					color: $white;
 					font-size: 0.7rem;
 					letter-spacing: 1px;
+					@include desktop {
+						font-size: 1rem;
+					}
 				}
 			}
 		}
@@ -49,6 +76,14 @@ header {
 			left: 0;
 			bottom: -7rem;
 			z-index: 3;
+			@include desktop {
+				width: 25rem;
+				left: 12rem;
+				top: 11rem;
+				box-shadow: 0.2rem 0.5rem 1.5rem rgba(black, 0.2);
+				height: 220px;
+				border-radius: 0.5rem;
+			}
 			.card-front-details {
 				width: 296px;
 				height: 162px;
@@ -57,8 +92,16 @@ header {
 				z-index: 4;
 				display: flex;
 				flex-direction: column;
+				@include desktop {
+					width: 25rem;
+					height: 220px;
+					padding: 1.5rem;
+				}
 				.logo {
 					max-width: 3.5rem;
+					@include desktop {
+						max-width: 5rem;
+					}
 				}
 				.card-number {
 					letter-spacing: 1px;
@@ -66,6 +109,10 @@ header {
 					font-weight: $fw500;
 					font-size: 1.3rem;
 					margin-top: 2.5rem;
+					@include desktop {
+						font-size: 1.87rem;
+						margin-top: 2.8rem;
+					}
 				}
 				.row {
 					display: flex;
@@ -78,6 +125,9 @@ header {
 						text-transform: uppercase;
 						font-size: 0.7rem;
 						color: $neutral200;
+						@include desktop {
+							font-size: 0.9rem;
+						}
 					}
 				}
 			}
@@ -86,18 +136,24 @@ header {
 }
 main {
 	background-color: $white;
+
 	form {
 		padding: 1.2rem;
 		max-width: 400px;
 		margin: 4rem auto;
-		//place for errors styling
+		@include desktop {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin: 4rem 14rem 4rem auto;
+		}
 		label {
 			text-transform: uppercase;
 			font-size: 0.9rem;
 			color: $neutral400;
 			letter-spacing: 1px;
 			font-weight: $fw500;
-			margin: 1.2rem 0 0.5rem 0;
+			margin: 0.8rem 0 0.5rem 0;
 			display: block;
 		}
 		input {
@@ -109,8 +165,17 @@ main {
 			width: 100%;
 			font-family: $fontGrotesk;
 			display: block;
+			color: $neutral400;
 			&::placeholder {
 				color: $neutral200;
+			}
+			&:focus {
+				background: linear-gradient($white, $white) padding-box,
+					$primaryActive border-box;
+				border: 1px solid transparent;
+			}
+			&.error {
+				border-color: $primaryError;
 			}
 		}
 		.container {
@@ -143,15 +208,35 @@ main {
 			font-weight: $fw500;
 			background-color: $neutral400;
 			padding: 0.9rem;
-			margin-top: 2rem;
+			margin-top: 1.5rem;
 			cursor: pointer;
 			&:hover {
 				color: $neutral400;
 				background-color: $white;
 			}
 		}
+		.error-text {
+			color: $primaryError;
+			font-size: 0.8rem;
+			margin-top: 0.5rem;
+			height: 16px;
+		}
 	}
 }
+
 footer {
-	display: none;
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	@include desktop {
+		grid-column: span 2;
+		background: $neutral400;
+		color: $neutral200;
+	}
+	a {
+		color: $neutral400;
+		@include desktop {
+			color: $white;
+		}
+	}
 }

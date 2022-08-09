@@ -7,7 +7,7 @@ $fs18: 18px;
 //primary
 
 //(active input border)
-$primaryActive: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+$primaryActive: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
 
 //(input errors)
 $primaryError: hsl(0, 100%, 66%);
