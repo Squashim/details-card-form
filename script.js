@@ -1,24 +1,19 @@
 const cvc = document.querySelector(".cvc");
 const cardNumber = document.querySelector(".card-number");
 const cardName = document.querySelector(".card-name");
-const expDate = document.querySelector(".exp-date");
+const year = document.querySelector(".year");
+const month = document.querySelector(".month");
 
 const errorBorder = "hsl(0, 100%, 66%)";
-
-const inputName = document.querySelector('input[name="cardName"]');
-const inputNumber = document.querySelector('input[name="cardNumber"]');
-const inputMonth = document.querySelector('input[name="month"]');
-const inputYear = document.querySelector('input[name="year"]');
-const inputCvc = document.querySelector('input[name="cvc"]');
+let changeSite = false;
 
 function checkInput(input) {
-	//validation
 	switch (input.name) {
 		case "cardName":
 			if (input.value.length <= 0) {
 				input.parentElement.children[2].textContent = "Can't be blank!";
 				input.classList.add("error");
-				cardName.textContent = input.value;
+				cardName.textContent = "JANE APPLESEED";
 			} else if (!/^[A-Za-z\s]*$/.test(input.value)) {
 				input.parentElement.children[2].textContent =
 					"Can only contain letters!";
@@ -30,23 +25,22 @@ function checkInput(input) {
 			}
 			break;
 		case "cardNumber":
-			if (input.value.length <= 0) {
+			if (input.value.length < 19 || input.value == "") {
 				input.parentElement.children[5].textContent = "Can't be blank!";
 				input.classList.add("error");
-				cardNumber.textContent = input.value;
-			} else if (!/^(\s*[0-9]+\s*)+$/.test(input.value)) {
-				input.parentElement.children[5].textContent = "Wrong format!";
-				input.classList.add("error");
-			} else if (input.value.length > 20) {
-				input.parentElement.children[5].textContent = "Too long!";
-				input.classList.add("error");
-			} else {
-				input.parentElement.children[5].textContent = "";
-				input.classList.remove("error");
 				cardNumber.textContent = input.value;
 				if (input.value.replace(/ /g, "").length % 4 == 0) {
 					input.value += " ";
 				}
+			} else if (
+				!/^(\s*[0-9]+\s*)+$/.test(input.value) ||
+				input.value.length > 19
+			) {
+				input.parentElement.children[5].textContent = "Wrong format!";
+				input.classList.add("error");
+			} else {
+				input.parentElement.children[5].textContent = "";
+				input.classList.remove("error");
 			}
 			break;
 		case "month":
@@ -60,35 +54,58 @@ function checkInput(input) {
 			} else {
 				input.parentElement.parentElement.children[2].textContent = "";
 				input.classList.remove("error");
-				expDate.textContent.split("/");
-				arr[0] = input.value;
-				expDate.textContent = arr[0];
+				if (input.value < 10) {
+					month.textContent = `0${input.value.replace(/^0+/, "")}`;
+				} else {
+					month.textContent = input.value.replace(/^0+/, "");
+				}
 			}
 
 			break;
 		case "year":
-			if (input.value <= 1950) {
+			if (input.value <= 21) {
 				input.parentElement.parentElement.children[2].textContent =
-					"Above 1950!";
+					"Above 2021!";
 				input.classList.add("error");
-			} else if (input.value > 2022) {
-				input.parentElement.parentElement.children[2].textContent = "Max 2022!";
+			} else if (input.value > 50) {
+				input.parentElement.parentElement.children[2].textContent = "Max 2050!";
 				input.classList.add("error");
 			} else {
 				input.parentElement.parentElement.children[2].textContent = "";
 				input.classList.remove("error");
+				year.textContent = input.value.replace(/^0+/, "");
 			}
 			break;
 		case "cvc":
 			if (input.value.length > 3 || input.value.length < 3) {
 				input.parentElement.children[2].textContent = "Must be 3 digits!";
 				input.classList.add("error");
+				cvc.textContent = "000";
 			} else if (input.value <= 0) {
 				input.parentElement.children[2].textContent = "Can't be negative!";
 				input.classList.add("error");
 			} else {
 				input.parentElement.children[2].textContent = "";
 				input.classList.remove("error");
+				cvc.textContent = input.value;
 			}
+	}
+}
+
+function confirm() {
+	const inputs = document.querySelectorAll("input");
+	for (let input of inputs) {
+		if (input.value == "" || input.classList.contains("error")) {
+			checkInput(input);
+			changeSite = false;
+		} else {
+			changeSite = true;
+		}
+	}
+}
+
+function showThanks() {
+	if (changeSite) {
+		alert("thanks");
 	}
 }

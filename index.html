@@ -28,21 +28,23 @@
 						<h2 class="card-number">0000 0000 0000 0000</h2>
 						<div class="row">
 							<p class="card-name">jane appleseed</p>
-							<p class="exp-date">00/00</p>
+							<p class="exp-date">
+								<span class="month">00</span>/<span class="year">00</span>
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</header>
 		<main>
-			<form>
+			<div class="form">
 				<label for="cardholder">cardholder name</label>
 				<input
 					name="cardName"
 					type="text"
 					id="cardholder"
 					placeholder="e.g. Jane Appleseed"
-					maxlength="35"
+					maxlength="28"
 					minlength="5"
 					onkeyup="checkInput(this)"
 				/>
@@ -100,8 +102,10 @@
 					</div>
 				</div>
 
-				<button class="submitBtn" type="submit">Confirm</button>
-			</form>
+				<button class="submitBtn" type="submit" onclick="confirm()">
+					Confirm
+				</button>
+			</div>
 		</main>
 		<footer class="attribution">
 			Challenge by

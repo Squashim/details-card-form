@@ -180,20 +180,20 @@ header .cards .card-front .card-front-details .row .exp-date {
 main {
   background-color: hsl(0deg, 0%, 100%);
 }
-main form {
+main .form {
   padding: 1.2rem;
   max-width: 400px;
   margin: 4rem auto;
 }
 @media (min-width: 78.125em) {
-  main form {
+  main .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 4rem 14rem 4rem auto;
   }
 }
-main form label {
+main .form label {
   text-transform: uppercase;
   font-size: 0.9rem;
   color: hsl(278deg, 68%, 11%);
@@ -202,7 +202,7 @@ main form label {
   margin: 0.8rem 0 0.5rem 0;
   display: block;
 }
-main form input {
+main .form input {
   font-size: 18px;
   outline: none;
   border: 1px solid hsl(270deg, 3%, 87%);
@@ -213,42 +213,42 @@ main form input {
   display: block;
   color: hsl(278deg, 68%, 11%);
 }
-main form input::-moz-placeholder {
+main .form input::-moz-placeholder {
   color: hsl(270deg, 3%, 87%);
 }
-main form input:-ms-input-placeholder {
+main .form input:-ms-input-placeholder {
   color: hsl(270deg, 3%, 87%);
 }
-main form input::placeholder {
+main .form input::placeholder {
   color: hsl(270deg, 3%, 87%);
 }
-main form input:focus {
+main .form input:focus {
   background: linear-gradient(hsl(0deg, 0%, 100%), hsl(0deg, 0%, 100%)) padding-box, linear-gradient(hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%)) border-box;
   border: 1px solid transparent;
 }
-main form input.error {
+main .form input.error {
   border-color: hsl(0deg, 100%, 66%);
 }
-main form .container {
+main .form .container {
   display: flex;
   flex-direction: row;
   gap: 1rem;
 }
-main form .container .row {
+main .form .container .row {
   display: flex;
   gap: 0.5rem;
   flex-direction: row;
 }
-main form .container .column {
+main .form .container .column {
   display: flex;
   flex-direction: column;
 }
-main form .container .column .input-month,
-main form .container .column .input-year {
+main .form .container .column .input-month,
+main .form .container .column .input-year {
   width: 77px;
   max-width: 100%;
 }
-main form .submitBtn {
+main .form .submitBtn {
   width: 100%;
   outline: none;
   border: 1px solid hsl(278deg, 68%, 11%);
@@ -262,11 +262,11 @@ main form .submitBtn {
   margin-top: 1.5rem;
   cursor: pointer;
 }
-main form .submitBtn:hover {
+main .form .submitBtn:hover {
   color: hsl(278deg, 68%, 11%);
   background-color: hsl(0deg, 0%, 100%);
 }
-main form .error-text {
+main .form .error-text {
   color: hsl(0deg, 100%, 66%);
   font-size: 0.8rem;
   margin-top: 0.5rem;
