@@ -18,6 +18,7 @@ function checkInput(input) {
 			if (input.value.length <= 0) {
 				input.parentElement.children[2].textContent = "Can't be blank!";
 				input.classList.add("error");
+				cardName.textContent = input.value;
 			} else if (!/^[A-Za-z\s]*$/.test(input.value)) {
 				input.parentElement.children[2].textContent =
 					"Can only contain letters!";
@@ -32,13 +33,20 @@ function checkInput(input) {
 			if (input.value.length <= 0) {
 				input.parentElement.children[5].textContent = "Can't be blank!";
 				input.classList.add("error");
+				cardNumber.textContent = input.value;
 			} else if (!/^(\s*[0-9]+\s*)+$/.test(input.value)) {
-				input.parentElement.children[5].textContent =
-					"Can only contain numbers!";
+				input.parentElement.children[5].textContent = "Wrong format!";
+				input.classList.add("error");
+			} else if (input.value.length > 20) {
+				input.parentElement.children[5].textContent = "Too long!";
 				input.classList.add("error");
 			} else {
 				input.parentElement.children[5].textContent = "";
 				input.classList.remove("error");
+				cardNumber.textContent = input.value;
+				if (input.value.replace(/ /g, "").length % 4 == 0) {
+					input.value += " ";
+				}
 			}
 			break;
 		case "month":
@@ -52,7 +60,11 @@ function checkInput(input) {
 			} else {
 				input.parentElement.parentElement.children[2].textContent = "";
 				input.classList.remove("error");
+				expDate.textContent.split("/");
+				arr[0] = input.value;
+				expDate.textContent = arr[0];
 			}
+
 			break;
 		case "year":
 			if (input.value <= 1950) {
