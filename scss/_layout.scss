@@ -215,7 +215,7 @@ main {
 			display: block;
 			color: $neutral400;
 			&::placeholder {
-				color: $neutral200;
+				color: $neutral300;
 			}
 			&:focus {
 				background: linear-gradient($white, $white) padding-box,
