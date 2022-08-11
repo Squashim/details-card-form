@@ -6,7 +6,7 @@ header {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	height: 15rem;
+	height: 19rem;
 	max-height: 100%;
 	max-width: 100%;
 	padding: 1rem;
@@ -137,7 +137,55 @@ header {
 main {
 	background-color: $white;
 
+	.continue-card {
+		padding: 1.2rem;
+		max-width: 400px;
+		margin: 4rem auto;
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		@include desktop {
+			margin: 4rem 10rem 4rem auto;
+		}
+		img {
+			width: 90px;
+			max-width: 100%;
+		}
+		h2 {
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-size: 2rem;
+			font-weight: $fw500;
+			margin-top: 2.5rem;
+			color: $neutral400;
+		}
+		p {
+			color: $neutral300;
+			margin-top: 1.2rem;
+		}
+		button {
+			width: 100%;
+			outline: none;
+			border: 1px solid $neutral400;
+			border-radius: 0.5rem;
+			font-size: inherit;
+			color: $neutral200;
+			font-family: $fontGrotesk;
+			font-weight: $fw500;
+			background-color: $neutral400;
+			padding: 0.9rem;
+			margin-top: 3rem;
+			cursor: pointer;
+			&:hover {
+				color: $neutral400;
+				background-color: $white;
+			}
+		}
+	}
+
 	.form {
+		display: flex;
+		flex-direction: column;
 		padding: 1.2rem;
 		max-width: 400px;
 		margin: 4rem auto;

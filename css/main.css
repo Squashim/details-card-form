@@ -40,7 +40,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 15rem;
+  height: 19rem;
   max-height: 100%;
   max-width: 100%;
   padding: 1rem;
@@ -191,7 +191,56 @@ header .cards .card-front .card-front-details .row .exp-date {
 main {
   background-color: hsl(0deg, 0%, 100%);
 }
+main .continue-card {
+  padding: 1.2rem;
+  max-width: 400px;
+  margin: 4rem auto;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 78.125em) {
+  main .continue-card {
+    margin: 4rem 10rem 4rem auto;
+  }
+}
+main .continue-card img {
+  width: 90px;
+  max-width: 100%;
+}
+main .continue-card h2 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+  color: hsl(278deg, 68%, 11%);
+}
+main .continue-card p {
+  color: hsl(279deg, 6%, 55%);
+  margin-top: 1.2rem;
+}
+main .continue-card button {
+  width: 100%;
+  outline: none;
+  border: 1px solid hsl(278deg, 68%, 11%);
+  border-radius: 0.5rem;
+  font-size: inherit;
+  color: hsl(270deg, 3%, 87%);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  background-color: hsl(278deg, 68%, 11%);
+  padding: 0.9rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+main .continue-card button:hover {
+  color: hsl(278deg, 68%, 11%);
+  background-color: hsl(0deg, 0%, 100%);
+}
 main .form {
+  display: flex;
+  flex-direction: column;
   padding: 1.2rem;
   max-width: 400px;
   margin: 4rem auto;

@@ -3,6 +3,8 @@ const cardNumber = document.querySelector(".card-number");
 const cardName = document.querySelector(".card-name");
 const year = document.querySelector(".year");
 const month = document.querySelector(".month");
+const mainPage = document.querySelector(".form");
+const thanksPage = document.querySelector(".continue-card");
 
 const errorBorder = "hsl(0, 100%, 66%)";
 let isValid = true;
@@ -25,9 +27,10 @@ function checkInput(input) {
 			}
 			break;
 		case "cardNumber":
-			if (input.value.length < 19 || input.value == "") {
+			if (input.value.replace(/ /g, "").length < 16 || input.value == "") {
 				input.parentElement.children[5].textContent = "Can't be blank!";
 				input.classList.add("error");
+
 				if (
 					input.value.replace(/ /g, "").length % 4 == 0 &&
 					input.value.length > 0
@@ -37,13 +40,14 @@ function checkInput(input) {
 				cardNumber.textContent = input.value;
 			} else if (
 				!/^(\s*[0-9]+\s*)+$/.test(input.value) ||
-				input.value.length > 19
+				input.value.replace(/ /g, "").length > 16
 			) {
 				input.parentElement.children[5].textContent = "Wrong format!";
 				input.classList.add("error");
 			} else {
 				input.parentElement.children[5].textContent = "";
 				input.classList.remove("error");
+				cardNumber.textContent = input.value;
 			}
 			break;
 		case "month":
@@ -51,6 +55,7 @@ function checkInput(input) {
 				input.parentElement.parentElement.children[2].textContent =
 					"More than 0!";
 				input.classList.add("error");
+				month.textContent = "00";
 			} else if (input.value > 12) {
 				input.parentElement.parentElement.children[2].textContent = "Max 12!";
 				input.classList.add("error");
@@ -70,6 +75,7 @@ function checkInput(input) {
 				input.parentElement.parentElement.children[2].textContent =
 					"Above 2021!";
 				input.classList.add("error");
+				year.textContent = "00";
 			} else if (input.value > 50) {
 				input.parentElement.parentElement.children[2].textContent = "Max 2050!";
 				input.classList.add("error");
@@ -106,6 +112,21 @@ function confirm() {
 		}
 	}
 	if (isValid) {
-		alert("thanks");
+		mainPage.style.display = "none";
+		thanksPage.style.display = "flex";
 	}
+}
+
+function reset() {
+	mainPage.style.display = "flex";
+	thanksPage.style.display = "none";
+	let inputs = document.querySelectorAll("input");
+	for (let input of inputs) {
+		input.value = "";
+	}
+	cardName.textContent = "JANE APPLESEED";
+	cardNumber.textContent = "0000 0000 0000 0000";
+	year.textContent = "00";
+	month.textContent = "00";
+	cvc.textContent = "000";
 }
