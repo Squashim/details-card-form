@@ -5,7 +5,7 @@ const year = document.querySelector(".year");
 const month = document.querySelector(".month");
 
 const errorBorder = "hsl(0, 100%, 66%)";
-let changeSite = false;
+let isValid = true;
 
 function checkInput(input) {
 	switch (input.name) {
@@ -28,10 +28,13 @@ function checkInput(input) {
 			if (input.value.length < 19 || input.value == "") {
 				input.parentElement.children[5].textContent = "Can't be blank!";
 				input.classList.add("error");
-				cardNumber.textContent = input.value;
-				if (input.value.replace(/ /g, "").length % 4 == 0) {
+				if (
+					input.value.replace(/ /g, "").length % 4 == 0 &&
+					input.value.length > 0
+				) {
 					input.value += " ";
 				}
+				cardNumber.textContent = input.value;
 			} else if (
 				!/^(\s*[0-9]+\s*)+$/.test(input.value) ||
 				input.value.length > 19
@@ -93,19 +96,16 @@ function checkInput(input) {
 }
 
 function confirm() {
-	const inputs = document.querySelectorAll("input");
+	let inputs = document.querySelectorAll("input");
 	for (let input of inputs) {
-		if (input.value == "" || input.classList.contains("error")) {
+		if (input.value == "") {
 			checkInput(input);
-			changeSite = false;
-		} else {
-			changeSite = true;
+			isValid = false;
+		} else if (!input.classList.contains("error")) {
+			isValid = true;
 		}
 	}
-}
-
-function showThanks() {
-	if (changeSite) {
+	if (isValid) {
 		alert("thanks");
 	}
 }
